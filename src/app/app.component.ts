@@ -8,7 +8,7 @@ import {StringConcatBuiltinFn} from "@angular/compiler-cli/src/ngtsc/partial_eva
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my_project1';
+  title = 'Welcome to CSF Day 1';
   myNumber:number;
 
   constructor() {
@@ -19,4 +19,11 @@ export class AppComponent {
     alert("Hello"+name)
   }
 
+  show(){
+    // @ts-ignore
+    document.querySelector("img").style.display="block"
+    // @ts-ignore
+    document.querySelector("button").style.display="none"
+
+  }
 }
