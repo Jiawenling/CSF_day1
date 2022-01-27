@@ -1,0 +1,83 @@
+{
+  "configVersion": 1,
+  "timestamp": 1643255481694,
+  "index": "CSF_day1/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "CSF_day1/favicon.ico",
+        "CSF_day1/index.html",
+        "CSF_day1/main.393507eab7de56e0.js",
+        "CSF_day1/manifest.webmanifest",
+        "CSF_day1/polyfills.ec9176a411ec4ff6.js",
+        "CSF_day1/runtime.eae0ec65d1c7b43a.js",
+        "CSF_day1/styles.ef46db3751d8e999.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "CSF_day1/assets/icons/icon-128x128.png",
+        "CSF_day1/assets/icons/icon-144x144.png",
+        "CSF_day1/assets/icons/icon-152x152.png",
+        "CSF_day1/assets/icons/icon-192x192.png",
+        "CSF_day1/assets/icons/icon-384x384.png",
+        "CSF_day1/assets/icons/icon-512x512.png",
+        "CSF_day1/assets/icons/icon-72x72.png",
+        "CSF_day1/assets/icons/icon-96x96.png",
+        "CSF_day1/assets/womanyellingcat-1573233850.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "CSF_day1/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "CSF_day1/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "CSF_day1/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "CSF_day1/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "CSF_day1/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "CSF_day1/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "CSF_day1/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "CSF_day1/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "CSF_day1/assets/womanyellingcat-1573233850.jpg": "d832a013a2c660332a1769714e09251f65df4b5c",
+    "CSF_day1/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "CSF_day1/index.html": "1ad3fdef447689ac07d29b08feac05824c2febb4",
+    "CSF_day1/main.393507eab7de56e0.js": "eba4999756a6febbd3a50e8a4e72d613ff11639a",
+    "CSF_day1/manifest.webmanifest": "c5111a071fe05818168e378751a1f28ed81f0f51",
+    "CSF_day1/polyfills.ec9176a411ec4ff6.js": "7043d58c679e761e8ca97392bf00af93dd34c670",
+    "CSF_day1/runtime.eae0ec65d1c7b43a.js": "a897cf6551621f2787517c449109715ced122758",
+    "CSF_day1/styles.ef46db3751d8e999.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
