@@ -1,23 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {UserModule} from './user/user.module'
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { Child1Component } from './child1/child1.component';
+import { Child2Component } from './child2/child2.component';
+import { RegisterComponent } from './register.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogComponent } from './dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Child1Component,
+    Child2Component,
+    RegisterComponent,
+    DialogComponent
 
   ],
   imports: [
-    BrowserModule, UserModule, ServiceWorkerModule.register('ngsw-worker.js', {
-  enabled: environment.production,
-  // Register the ServiceWorker as soon as the app is stable
-  // or after 30 seconds (whichever comes first).
-  registrationStrategy: 'registerWhenStable:30000'
-})
+    BrowserModule, ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }), FormsModule, ReactiveFormsModule, BrowserAnimationsModule, MatDialogModule, MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,7 @@
+<h2 mat-dialog-title>Delete this?</h2>
+<mat-dialog-content>You can only submit if you've filled in at least one description of yourself!</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button cdkFocusInitial (click)="onNoClick()">Cancel</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-button (click)="deleteConfirm()" [mat-dialog-close]="true">Delete</button>
+</mat-dialog-actions>
