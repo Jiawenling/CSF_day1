@@ -4,6 +4,8 @@ import {Form, FormArray, FormBuilder, FormGroup, Validators} from "@angular/form
 import {Person, BioData} from './person'
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {DialogComponent} from "./dialog.component";
+// @ts-ignore
+import {v4 as uuidv4} from 'uuid';
 
 @Component({
   selector: 'app-root',
@@ -84,8 +86,10 @@ export class AppComponent implements OnInit{
   processForm(){
     console.log(this.personalForm.value)
     const person = this.personalForm.value as Person
+    person.userId =uuidv4()
     person.contactOption =person.contactOption.map(v => !!v)
     console.log(person)
+    localStorage.setItem(person.userId, JSON.stringify(person))
     this.personalForm.reset()
   }
 

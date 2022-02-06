@@ -5,6 +5,7 @@ export interface Person{
   gender: String
   contactOption: boolean[]
   bioInfo: BioData[]
+  userId: string
 }
 
 export interface BioData{
