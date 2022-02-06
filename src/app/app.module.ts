@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -28,7 +30,7 @@ import {MatButtonModule} from "@angular/material/button";
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    }), FormsModule, ReactiveFormsModule, BrowserAnimationsModule, MatDialogModule, MatButtonModule
+    }), FormsModule, ReactiveFormsModule, BrowserAnimationsModule, MatDialogModule, MatButtonModule, FlexLayoutModule, MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

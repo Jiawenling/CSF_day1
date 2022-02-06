@@ -1,8 +1,14 @@
+<div fxLayoutAlign = "center" >
+<form [formGroup]="personalForm" (ngSubmit)="processForm()" fxLayout="column" fxLayoutGap="1em" >
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input type="text" matInput formControlName="name"><br>
+    <mat-label>Phone</mat-label>
+    <input type="text" matInput formControlName="phone"><br>
+    <mat-label>Email</mat-label>
+    <input type="text" matInput formControlName="email">
+  </mat-form-field>
 
-<form [formGroup]="personalForm" (ngSubmit)="processForm()">
-  Name: <input type="text" formControlName="name"><br>
-  Phone: <input type="text" formControlName="phone"><br>
-  Email: <input type="text" formControlName="email">
   <div>
     <input type="radio" value = "male" formControlName="gender">Male
     <input type="radio" value = "female" formControlName="gender">Female
@@ -24,4 +30,4 @@
   </div>
   <button type="submit" [disabled]="personalForm.invalid || bioIsEmpty()">Submit</button>
 </form>
-
+</div>

@@ -1,5 +1,7 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {RegisterComponent} from "./register.component";
+import {Person} from "./person";
+
 
 
 @Component({
@@ -7,7 +9,7 @@ import {RegisterComponent} from "./register.component";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, AfterViewInit{
   // appNumber(child1Num: number){
   //   this.myNumber = child1Num+1
   //   this.numberForChild2 = this.myNumber + 1
@@ -30,8 +32,27 @@ export class AppComponent implements OnInit{
 
   }
 
+  ngAfterViewInit() {
+    this.registerComponent.personalForm.setValue(newPerson)
+    // console.log(this.registerComponent.personalForm.value)
+  }
+
   @ViewChild(RegisterComponent)
   registerComponent!:RegisterComponent
 
 }
+
+let newPerson: Person = {
+  name: 'Alice',
+  phone: '12345678',
+  email: 'alice@coolmail.com',
+  gender: 'female',
+  contactOption: [true, true, false],
+  bioInfo:[{
+    traits: 'favourite food',
+    description: 'pancake'
+  }],
+  userId: '00001Alice'
+}
+
 

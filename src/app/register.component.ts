@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {Person} from "./person";
@@ -12,6 +12,8 @@ import {v4 as uuidv4} from 'uuid';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+
+  @Input() retrievedPerson: Partial<Person> = {};
 
   personalForm!:FormGroup;
   newFormArray!: FormArray;
