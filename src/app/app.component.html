@@ -5,27 +5,5 @@
 <!--<img id = "img" src="assets/womanyellingcat-1573233850.jpg" alt="meme">-->
 <!--<button class = "cat" (click)="show()">Click for something fun</button>-->
 
-<form [formGroup]="personalForm" (ngSubmit)="processForm()">
-  Name: <input type="text" formControlName="name"><br>
-  Phone: <input type="text" formControlName="phone"><br>
-  Email: <input type="text" formControlName="email">
-  <div>
-    <input type="radio" value = "male" formControlName="gender">Male
-    <input type="radio" value = "female" formControlName="gender">Female
-  </div>
-<!--  important for checkboxes!!!-->
-  <div formArrayName="contactOption" *ngFor="let c of newFormArray.controls; let i = index">
-    <input type="checkbox" [formControl]="c"> {{contactOptions[i]}}
-  </div>
 
-  <div *ngIf="bioIsEmpty()">Please key in some information about your self!</div>
-  <button type="button" (click)="addBio()">Describe yourself!</button>
-<!--  important for formgroups within formarray-->
-  <div formArrayName="bioInfo" *ngFor="let grp of bioInfo.controls; let i = index" [formGroup]="grp">
-    Traits<input placeholder="List your likes, dislikes, favourite sport etc.." type="text" formControlName="traits">
-    Description<input type="text" formControlName="description">
-    <button type="button" (click)="deleteBioOption(i)">Delete</button>
-  </div>
-
-  <button type="submit" [disabled]="personalForm.invalid || bioIsEmpty()">Submit</button>
-</form>
+<app-register></app-register>
