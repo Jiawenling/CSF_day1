@@ -13,3 +13,7 @@ export interface BioData{
   description: String
 
 }
+
+export interface ResponseMessage{
+  message: string
+}
