@@ -1,14 +1,24 @@
 <div fxLayoutAlign = "center" >
-<form [formGroup]="personalForm" (ngSubmit)="processForm()" fxLayout="column" fxLayoutGap="1em" >
+<form [formGroup]="personalForm" (ngSubmit)="processForm(); formDirective.resetForm()" fxLayout="column" fxLayoutGap="1em" #formDirective = 'ngForm' >
   <mat-form-field>
     <mat-label>Name</mat-label>
     <input type="text" matInput formControlName="name"><br>
+  </mat-form-field>
+  <mat-form-field>
     <mat-label>Phone</mat-label>
     <input type="text" matInput formControlName="phone"><br>
-    <mat-label>Email</mat-label>
-    <input type="text" matInput formControlName="email">
   </mat-form-field>
-
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input type="text" matInput  formControlName="email">
+    <mat-hint>Your email will be set to private by default</mat-hint>
+    <mat-error *ngIf="email.hasError('email')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="email.hasError('required')">
+      Email address is required!
+    </mat-error>
+  </mat-form-field>
   <div>
     <input type="radio" value = "male" formControlName="gender">Male
     <input type="radio" value = "female" formControlName="gender">Female
@@ -18,16 +28,28 @@
     <input type="checkbox" [formControl]="c"> {{contactOptions[i]}}
   </div>
 
+  <mat-divider></mat-divider>
   <div *ngIf="bioIsEmpty()">Please key in some information about your self!</div>
-  <button type="button" (click)="addBio()">Describe yourself!</button>
+  <button type="button" (click)="addBio()" mat-raised-button
+          matTooltip="Let others find out more about you!">Describe yourself!</button>
   <!--  important for formgroups within formarray-->
-  <div formArrayName="bioInfo">
-    <div *ngFor="let grp of bioInfo.controls; let i = index" [formGroup]="grp">
-      Traits<input placeholder="List your likes, dislikes, favourite sport etc.." type="text" formControlName="traits">
-      Description<input type="text" formControlName="description">
+  <div formArrayName="bioInfo"  >
+    <div *ngFor="let grp of bioInfo.controls; let i = index" [formGroup]="grp" fxLayout="row" fxLayoutAlign="space-around">
+      <mat-form-field >
+        <mat-label>Traits</mat-label>
+        <input matInput placeholder="List your likes, dislikes, favourite sport etc.." type="text" formControlName="traits">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input type="text" matInput formControlName="description">
+      </mat-form-field>
+
       <button type="button" (click)="deleteBioOption(i)">Delete</button>
     </div>
   </div>
+
   <button type="submit" [disabled]="personalForm.invalid || bioIsEmpty()">Submit</button>
 </form>
 </div>
+
+<router-outlet></router-outlet>

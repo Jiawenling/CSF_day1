@@ -1,8 +1,8 @@
 export interface Person{
-  name:String
-  phone: String
-  email: String
-  gender: String
+  name:string
+  phone: string
+  email: string
+  gender: string
   contactOption: boolean[]
   bioInfo: BioData[]
   userId: string

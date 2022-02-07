@@ -1,10 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {Person} from "./person";
 import {DialogComponent} from "./dialog.component";
 // @ts-ignore
 import {v4 as uuidv4} from 'uuid';
+import {UserServiceService} from "./user-service.service";
 
 @Component({
   selector: 'app-register',
@@ -21,7 +22,7 @@ export class RegisterComponent implements OnInit {
   bioInfo: FormArray = this.fb.array([])
 
 
-  constructor(private fb: FormBuilder, public dialog: MatDialog) {
+  constructor(private fb: FormBuilder, public dialog: MatDialog, private userSvc: UserServiceService) {
   };
 
   ngOnInit() {
@@ -46,6 +47,10 @@ export class RegisterComponent implements OnInit {
       bioInfo: this.createBioArray()
     })
   }
+
+  get name(){return this.personalForm.get('name') as FormControl}
+  get email(){return this.personalForm.get('email') as FormControl}
+  get phone(){return this.personalForm.get('phone')as FormControl}
 
   createBioGroup(){
     return this.fb.group({
@@ -88,6 +93,9 @@ export class RegisterComponent implements OnInit {
     person.contactOption =person.contactOption.map(v => !!v)
     console.log(person)
     localStorage.setItem(person.userId, JSON.stringify(person))
+    let response = this.userSvc.postUser(person)
+    console.log('>>>>>>response: ', response)
+    // console.log(localStorage.getItem(person.userId))
     this.personalForm.reset()
   }
 
@@ -101,5 +109,7 @@ export class RegisterComponent implements OnInit {
       }
     });
   }
+
+
 
 }

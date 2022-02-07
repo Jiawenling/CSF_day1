@@ -33,7 +33,7 @@ export class AppComponent implements OnInit, AfterViewInit{
   }
 
   ngAfterViewInit() {
-    this.registerComponent.personalForm.setValue(newPerson)
+    // this.registerComponent.personalForm.setValue(newPerson)
     // console.log(this.registerComponent.personalForm.value)
   }
 
